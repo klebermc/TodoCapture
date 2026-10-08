@@ -1,0 +1,19 @@
+# Credentials and personal data — kept local, see .env.example / templates.example.yaml
+.env
+templates.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Editor / OS cruft
+*.swp
+*~
+.DS_Store
+.vscode/
+.idea/

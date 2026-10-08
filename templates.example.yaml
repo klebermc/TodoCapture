@@ -1,0 +1,90 @@
+# TodoCapture templates — a task plus sub-tasks, reusable with:
+#
+#   todo <text> --template <name> --due <date>
+#
+# {}      is replaced by the <text> you type
+# offset  is days relative to --due (-1 = the day before, 0 = same day, 2 = two days after)
+#         leave it out for a sub-task with no due date
+# You always get the review prompt first, and [e]dit to tweak a single use.
+#
+# ── Blank pattern: copy, rename, fill in ────────────────────────────
+#
+# name:
+#   title: "{}"
+#   subtasks:
+#     - title: First step
+#       offset: -2
+#     - title: Second step
+#       offset: -1
+#     - title: Wrap up
+#       offset: 1
+
+
+# Anything with a before / during / after shape.
+task:
+  title: "{}"
+  subtasks:
+    - title: "Prepare: {}"
+      offset: -2
+    - title: "Do: {}"
+      offset: 0
+    - title: "Follow up: {}"
+      offset: 1
+
+# In-person meeting you're organizing.
+meeting:
+  title: "Meeting: {}"
+  subtasks:
+    - title: Book a room
+      offset: -2
+    - title: Send invite + agenda
+      offset: -2
+    - title: Prepare material
+      offset: -1
+    - title: Send notes / action items
+      offset: 1
+
+# Someone visiting you (workshop, collaboration, interview). --due = first day of the visit.
+visit:
+  title: "Visit: {}"
+  subtasks:
+    - title: Confirm dates and agenda with the visitor
+      offset: -14
+    - title: Book room(s) for the visit
+      offset: -10
+    - title: Arrange building access / parking
+      offset: -5
+    - title: Plan lunch / dinner
+      offset: -3
+    - title: Share final schedule with everyone involved
+      offset: -2
+    - title: Send thank-you + follow-ups
+      offset: 2
+
+# Your own trip. --due = departure.
+trip:
+  title: "Trip: {}"
+  subtasks:
+    - title: Book transport
+      offset: -21
+    - title: Book accommodation
+      offset: -21
+    - title: Check documents / visa
+      offset: -14
+    - title: Pack
+      offset: -1
+    - title: Submit expenses
+      offset: 7
+
+# Something with a hard deadline (paper, report, application). --due = the deadline.
+deadline:
+  title: "{}"
+  subtasks:
+    - title: Outline
+      offset: -10
+    - title: First draft
+      offset: -5
+    - title: Review / get feedback
+      offset: -2
+    - title: Submit
+      offset: 0

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "todo-capture"
+version = "0.1.0"
+description = "Quick capture of to-dos into a Notion database, with optional Claude breakdown into sub-tasks"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=1.8",
+    "notion-client>=2.2",
+    "dateparser>=1.2",
+    "pyyaml>=6",
+    "python-dotenv>=1",
+    "pydantic>=2",
+]
+
+[project.scripts]
+todo = "todo_capture.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
